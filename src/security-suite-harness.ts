@@ -66,7 +66,7 @@ export function testXssVulnerability(renderComponent: (input: string) => void) {
   renderComponent(xssPayload);
 
   // [보안 1] 가상 브라우저 환경에서 악성 스크립트가 실행되었는지 확인
-  if ((global as any).window.__xss_compromised__) {
+  if ((globalThis as any).window.__xss_compromised__) {
     throw new Error(`[SECURITY VIOLATION] XSS 방어가 뚫렸습니다! 입력값이 적절히 이스케이프(Sanitize)되지 않았습니다.`);
   }
 

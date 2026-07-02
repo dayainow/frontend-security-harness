@@ -40,7 +40,7 @@ describe('종합 프론트엔드 보안 하네스 테스트', () => {
       });
     }).toThrow('[SECURITY VIOLATION] XSS 방어가 뚫렸습니다!');
     
-    delete (global as any).window.__xss_compromised__;
+    delete (globalThis as any).window.__xss_compromised__;
   });
 
   it('민감한 정보를 LocalStorage에 저장하려고 하면 차단되는지 검증', () => {

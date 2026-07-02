@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true
+  },
+  "include": ["src/index.ts", "src/security-suite-harness.ts"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts"]
+}
